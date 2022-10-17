@@ -1,7 +1,3 @@
-# Player Class 
-# State: (1) lives: this will track the player's lives
-# Behaviour: (1) answers:  this will ask the player for an answer to the question
-
 class Player
   
   attr_reader :lives, :number_of_players, :name

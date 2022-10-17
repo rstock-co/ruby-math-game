@@ -28,10 +28,7 @@ class Game
     if players[0].lives === 0
       return p "Sorry #{players[0].name}, you've lost. #{players[1].name} won, with a score of #{players[1].lives}/3!"
     end
-    
+
     new_turn()
   end
-
 end
-
-  
