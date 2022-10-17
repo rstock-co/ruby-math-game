@@ -4,10 +4,10 @@ class Turn
   
   def initialize(player)
     @player = player
-    @question = Question.new()
+    @question = Question.new
   end
 
-  def ask_question()
+  def ask_question
     puts "#{@player.name}: #{@question.string}"
     print "> "
     result = validate($stdin.gets.chomp)
@@ -15,7 +15,7 @@ class Turn
 
   def validate(answer)
     if (answer.to_i != @question.answer) 
-      @player.loose_a_life() 
+      @player.loose_a_life
       return "Seriously #{@player.name}? No!"
     end
     return "YES #{@player.name}! You are correct!"

@@ -1,6 +1,6 @@
 class Player
   
-  attr_reader :lives, :number_of_players, :name
+  attr_reader :lives, :name
 
   @@number_of_players = 0
   
@@ -11,7 +11,7 @@ class Player
     @name = name
   end
   
-  def loose_a_life()
+  def loose_a_life
     @lives -= 1 
     p "#{@name} lost a life. They now have #{@lives} lives remaining."
   end

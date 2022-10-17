@@ -10,4 +10,4 @@ name_2 = $stdin.gets.chomp
 
 game = Game.new(name_1, name_2)
 
-game.new_turn()
+game.new_turn
