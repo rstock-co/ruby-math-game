@@ -4,19 +4,19 @@
 
 class Player
   
-  attr_reader :lives, :number_of_players
+  attr_reader :lives, :number_of_players, :name
 
   @@number_of_players = 0
   
-  def initialize(lives)
+  def initialize(name)
     @@number_of_players += 1
     @player_num = @@number_of_players
-    @lives = lives
-    p "Player #{@player_num} created with #{@lives} lives. There are now #{@@number_of_players} players in the game."
+    @lives = 3
+    @name = name
   end
   
   def loose_a_life()
     @lives -= 1 
-    p "Player #{@player_num} lost a life. They now have #{@lives} lives remaining."
+    p "#{@name} lost a life. They now have #{@lives} lives remaining."
   end
 end

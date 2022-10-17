@@ -1,8 +1,38 @@
-# game: 
-# State: (1) turns: which player's turn is it?
-# behaviour: (1) tracks and sets the current_player
+require './player'
+require './turn'
 
 class Game
 
-  
+  def initialize(name_1, name_2)
+    @turn_number = 0
+    @player_1 = Player.new(name_1)
+    @player_2 = Player.new(name_2)
+  end
+
+  def current_player()
+    @turn_number += 1
+    if @turn_number % 2 === 0 
+      return [@player_2,@player_1]
+    end
+    return [@player_1,@player_2]
+  end
+
+  def turn(players)
+    turn = Turn.new(players[0])
+    p turn.ask_question()
+    if players[0].lives === 0
+      return p "Sorry #{players[0].name}, you've lost. #{players[1].name} won, with a score of #{players[1].lives}/3!"
+    end
+    new_turn()
+  end
+
+  def evaluate_game()
+    
+  end
+
+  def new_turn()
+    turn(current_player())
+  end
 end
+
+  
